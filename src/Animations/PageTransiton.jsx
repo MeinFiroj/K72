@@ -29,9 +29,11 @@ const PageTransiton = ({ children }) => {
     });
     tl.to(stairContRef.current, {
       display: "none",
+      duration : 0
     });
     tl.to(".stair", {
       y: "0%",
+      duration : 0
     });
 
     gsap.from(appRef.current, {

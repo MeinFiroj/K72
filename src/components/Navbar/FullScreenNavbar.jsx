@@ -20,20 +20,18 @@ const FullScreenNavbar = () => {
       });
       tl.to(navbarRef.current, {
         scaleY: 1,
-        duration : 0.1
+        duration: 0.1,
       });
-      tl.from('.marquee-parent', {
-        rotateX : 90,
-        stagger : 0.1,
-        duration : 0.4
-      })
-      tl.from('.social-links', {
-        opacity : 0,
-        top : '-20%',
-        duration : 0.5
-      })
-
-
+      tl.from(".marquee-parent", {
+        rotateX: 90,
+        stagger: 0.1,
+        duration: 0.4,
+      });
+      tl.from(".social-links", {
+        opacity: 0,
+        top: "-20%",
+        duration: 0.5,
+      });
     } else {
       tl.to(navbarRef.current, {
         display: "none",
@@ -41,7 +39,6 @@ const FullScreenNavbar = () => {
         top: "-100%",
       });
     }
-
   }, [navbar]);
 
   return (
@@ -70,7 +67,7 @@ const FullScreenNavbar = () => {
           onClick={() => {
             navigate("/projects");
           }}
-          className="marquee-parent border-y border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
+          className="marquee-parent origin-top border-y border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
           <h1 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-center">
             Projects
@@ -114,7 +111,7 @@ const FullScreenNavbar = () => {
           onClick={() => {
             navigate("/agence");
           }}
-          className="marquee-parent border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
+          className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
           <h1 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-center">
             Agence
@@ -158,7 +155,7 @@ const FullScreenNavbar = () => {
           onClick={() => {
             navigate("/contact");
           }}
-          className="marquee-parent border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
+          className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
           <h1 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-center">
             Contact
@@ -202,7 +199,7 @@ const FullScreenNavbar = () => {
           onClick={() => {
             navigate("/blogue");
           }}
-          className="marquee-parent border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
+          className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
           <h1 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-center">
             Blogue

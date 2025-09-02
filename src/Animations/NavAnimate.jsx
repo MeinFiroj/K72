@@ -19,7 +19,6 @@ const NavAnimate = () => {
         stagger: {
           amount: -0.2,
         },
-        zIndex: 10,
       });
     }
 
@@ -29,8 +28,7 @@ const NavAnimate = () => {
         stagger: {
           amount: -0.2,
         },
-        zIndex: 0,
-        // delay: 0.05,
+        duration : 0.3,
         onComplete: () => {
           tl.to(stairParentRef.current, {
             display: "none",
