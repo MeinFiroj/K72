@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import './components/Navbar/Navbar.css';
+
+@font-face {
+    font-family: font1;
+    src: url('/Lausanne-300.woff2');
+}
+
+@font-face {
+    font-family: font2;
+    src: url('/Lausanne-500.woff2');
+}
+
+body {
+    /* overflow-x: hidden; */
+    width: 100%;
+}
+
+#root {
+    width: 100%;
+}
+
+/* theme color #D3FD50 */

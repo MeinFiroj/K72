@@ -1,0 +1,56 @@
+/* home navbar styling  */
+.menu-btn::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    background-color: #D3fD50;
+    transition: all .1s;
+}
+
+.menu-btn:hover::before {
+    top: 0;
+}
+
+.menu-line {
+    transition: background-color .1s;
+}
+
+.menu-btn:hover .menu-line {
+    background-color: black;
+}
+
+/* full page navbar styling */
+.close-btn:hover .close-line {
+    background-color: #D3fD50;
+}
+
+.marquee {
+    transition: all .3s ease-in-out, scale .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.marquee-parent:hover .marquee {
+    top: 0;
+    scale: 1;
+    opacity: 1;
+}
+
+.marquee-child {
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes marquee {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-100%);
+    }
+}
