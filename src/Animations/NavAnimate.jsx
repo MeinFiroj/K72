@@ -61,25 +61,3 @@ const NavAnimate = () => {
 };
 
 export default NavAnimate;
-
-// useGSAP(() => {
-//     function openNav() {
-//       gsap.to(navbarRef.current, {
-//         top: "0",
-//         display: "flex",
-//         delay: 0.5,
-//       });
-//     }
-//     function closeNav() {
-//       gsap.to(navbarRef.current, {
-//         top: "0",
-//         display: "flex",
-//       });
-//     }
-
-//     if (navbar) {
-//       openNav();
-//     } else {
-//       closeNav();
-//     }
-//   }, [navbar]);

@@ -21,6 +21,11 @@ const FullScreenNavbar = () => {
       tl.to(navbarRef.current, {
         scaleY: 1,
         duration: 0.1,
+        onComplete: () => {
+          gsap.to(document.body, {
+            overflow: "hidden",
+          });
+        },
       });
       tl.from(".marquee-parent", {
         rotateX: 90,
@@ -37,6 +42,11 @@ const FullScreenNavbar = () => {
         display: "none",
         scaleY: 0,
         top: "-100%",
+        onComplete: () => {
+          gsap.to(document.body, {
+            overflow: "visible",
+          });
+        },
       });
     }
   }, [navbar]);
@@ -45,7 +55,7 @@ const FullScreenNavbar = () => {
     <div
       ref={navbarRef}
       id="fullPageMenu"
-      className="absolute origin-top top-[-100%] hidden left-0 h-screen w-screen bg-black z-40 text-white flex-col items-center"
+      className="fixed origin-top top-[-100%] hidden left-0 h-screen w-screen bg-black z-40 text-white flex-col items-center"
     >
       <div className="p-1 flex justify-between w-full">
         <div className="p-2">
@@ -66,11 +76,12 @@ const FullScreenNavbar = () => {
         <div
           onClick={() => {
             navigate("/projects");
+            setNavbar(false);
           }}
           className="marquee-parent origin-top border-y border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
           <h1 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-center">
-            Projects
+            Projets
           </h1>
           <div className="marquee absolute top-[-100%] opacity-0 scale-y-0 origin-top flex items-center justify-start ">
             <div className="marquee-child flex items-start whitespace-nowrap shrink-0 bg-[#D3FD50] pt-5 w-[auto] ">
@@ -79,14 +90,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/snowfall-img.png"
+                src="./images/snowfall-img.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour tout voir
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/bag-img.png"
+                src="./images/bag-img.png"
               />
             </div>
             <div className="marquee-child flex items-start whitespace-nowrap shrink-0 bg-[#D3FD50] pt-5 w-[auto] ">
@@ -95,14 +106,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/snowfall-img.png"
+                src="./images/snowfall-img.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour tout voir
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/bag-img.png"
+                src="./images/bag-img.png"
               />
             </div>
           </div>
@@ -110,6 +121,7 @@ const FullScreenNavbar = () => {
         <div
           onClick={() => {
             navigate("/agence");
+            setNavbar(false);
           }}
           className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
@@ -123,14 +135,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover object-[0%_12%] rounded-full mx-5"
-                src="./public/images/img7.png"
+                src="./images/img7.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour tout savoir
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover object-[0%_20%] rounded-full mx-5"
-                src="./public/images/img10.png"
+                src="./images/img10.png"
               />
             </div>
             <div className="marquee-child flex items-start whitespace-nowrap shrink-0 bg-[#D3FD50] pt-5">
@@ -139,14 +151,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover object-[0%_12%] rounded-full mx-5"
-                src="./public/images/img7.png"
+                src="./images/img7.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour tout savoir
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover object-[0%_20%] rounded-full mx-5"
-                src="./public/images/img10.png"
+                src="./images/img10.png"
               />
             </div>
           </div>
@@ -154,6 +166,7 @@ const FullScreenNavbar = () => {
         <div
           onClick={() => {
             navigate("/contact");
+            setNavbar(false);
           }}
           className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
@@ -167,14 +180,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[11vw] h-[5.4vw] object-contain mx-5"
-                src="./public/images/blackheartshape.png"
+                src="./images/blackheartshape.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour envoyer un fax
               </h2>
               <img
                 className="w-[11vw] h-[5.4vw] object-contain mx-5"
-                src="./public/images/blackheartshape.png"
+                src="./images/blackheartshape.png"
               />
             </div>
             <div className="marquee-child flex items-start whitespace-nowrap shrink-0 bg-[#D3FD50] pt-5 w-[auto] ">
@@ -183,14 +196,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[11vw] h-[5.4vw] object-contain mx-5"
-                src="./public/images/blackheartshape.png"
+                src="./images/blackheartshape.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 pour envoyer un fax
               </h2>
               <img
                 className="w-[11vw] h-[5.4vw] object-contain mx-5"
-                src="./public/images/blackheartshape.png"
+                src="./images/blackheartshape.png"
               />
             </div>
           </div>
@@ -198,6 +211,7 @@ const FullScreenNavbar = () => {
         <div
           onClick={() => {
             navigate("/blogue");
+            setNavbar(false);
           }}
           className="marquee-parent origin-top border-b border-[rgba(255,255,255,0.5)] pt-5 cursor-pointer relative overflow-hidden "
         >
@@ -211,14 +225,14 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/blogue-img.png"
+                src="./images/blogue-img.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 lire les articles
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/handshake.gif"
+                src="./images/handshake.gif"
               />
             </div>
             <div className="marquee-child flex items-start whitespace-nowrap shrink-0 bg-[#D3FD50] pt-5 w-[auto] ">
@@ -227,46 +241,46 @@ const FullScreenNavbar = () => {
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/blogue-img.png"
+                src="./images/blogue-img.png"
               />
               <h2 className="text-[7.5vw] uppercase font-[font2] leading-[6.3vw] text-black">
                 lire les articles
               </h2>
               <img
                 className="w-[15vw] h-[5.4vw] object-cover rounded-full mx-5"
-                src="./public/images/handshake.gif"
+                src="./images/handshake.gif"
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="social-links flex items-center justify-between w-full mt-auto p-3 pl-4">
+      <div className="text-[2.3vw] social-links flex items-center justify-between w-full mt-auto p-3 pl-4">
         <div className="h-[5px] w-[6vw] border-b-20 border-dotted "></div>
         <div className="flex items-center justify-center gap-2">
           <Link
-            className="text-[2.3vw] font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
+            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
             to="https://sheryians.com"
             target="_blank"
           >
             FB
           </Link>
           <Link
-            className="text-[2.3vw] font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
+            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
             to="https://sheryians.com"
             target="_blank"
           >
             IG
           </Link>
           <Link
-            className="text-[2.3vw] font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
+            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
             to="https://sheryians.com"
             target="_blank"
           >
             IN
           </Link>
           <Link
-            className="text-[2.3vw] font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
+            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
             to="https://sheryians.com"
             target="_blank"
           >

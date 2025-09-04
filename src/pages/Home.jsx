@@ -6,7 +6,7 @@ import NavbarHome from "../components/Navbar/NavbarHome";
 const Home = () => {
   return (
     <div className="h-screen w-full relative">
-      <NavbarHome/>
+      {/* <NavbarHome/> */}
 
       <div className="h-screen w-screen fixed">
         <Video />

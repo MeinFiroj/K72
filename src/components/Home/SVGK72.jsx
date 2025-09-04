@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { NavLogoColorContext } from "../../context/NavbarContext";
 const SVGK72 = () => {
   const navigate = useNavigate();
+
+  const [logoColor, setLogoColor] = useContext(NavLogoColorContext)
+
   return (
     <div onClick={() => navigate("/")} className="cursor-pointer ">
       <svg
@@ -8,7 +13,7 @@ const SVGK72 = () => {
         width="120"
         height="55"
         viewBox="0 0 103 44"
-        fill="white"
+        fill={logoColor}
       >
         <path
           fillRule="evenodd"
