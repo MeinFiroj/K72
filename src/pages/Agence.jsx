@@ -1,44 +1,31 @@
+import { useGSAP } from "@gsap/react";
 import Section1 from "../components/Agence/Section1";
+import Footer from "../components/Footer/Footer";
+import gsap from "gsap";
+import { ScrollSmoother } from "gsap/all";
+
+gsap.registerPlugin(ScrollSmoother);
 
 const Agence = () => {
+  useGSAP(() => {
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 2,
+      effects: true,
+    });
+  });
   return (
-    <div className="w-full ">
-      <Section1 />
+    <div id="smooth-wrapper" className="w-full">
+      <div id="smooth-content" className="w-full ">
+        <Section1 />
+        <Footer />
+      </div>
     </div>
   );
 };
 
 export default Agence;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {
   /* <section className="section1 pt-[56vh] font-[font2]">

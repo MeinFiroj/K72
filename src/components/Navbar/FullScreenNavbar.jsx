@@ -4,6 +4,9 @@ import { useContext, useRef } from "react";
 import { FullpageNavContext } from "../../context/NavbarContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import SocialLinks from "../Common/SocialLinks";
+import Timer from "../Footer/Timer";
+import ImpLinks from "../Footer/ImpLinks";
 
 const FullScreenNavbar = () => {
   const [navbar, setNavbar] = useContext(FullpageNavContext);
@@ -256,37 +259,11 @@ const FullScreenNavbar = () => {
       </div>
 
       <div className="text-[2.3vw] social-links flex items-center justify-between w-full mt-auto p-3 pl-4">
-        <div className="h-[5px] w-[6vw] border-b-20 border-dotted "></div>
-        <div className="flex items-center justify-center gap-2">
-          <Link
-            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
-            to="https://sheryians.com"
-            target="_blank"
-          >
-            FB
-          </Link>
-          <Link
-            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
-            to="https://sheryians.com"
-            target="_blank"
-          >
-            IG
-          </Link>
-          <Link
-            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
-            to="https://sheryians.com"
-            target="_blank"
-          >
-            IN
-          </Link>
-          <Link
-            className=" font-[font2] border-2 rounded-full pt-2 px-3 leading-[1.7vw] hover:text-[#D3FD50]  "
-            to="https://sheryians.com"
-            target="_blank"
-          >
-            BE
-          </Link>
+        <Timer />
+        <div className="font-[font2] flex items-start gap-3 text-[11px]">
+          <ImpLinks />
         </div>
+        <SocialLinks />
       </div>
     </div>
   );

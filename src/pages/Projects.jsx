@@ -3,6 +3,7 @@ import ProjetsBottom from "../components/projets/ProjetsBottom";
 import gsap from "gsap";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
+import Footer from "../components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,12 +60,12 @@ const Projects = () => {
   });
 
   return (
-    <div className="w-full p-3">
-      <div className="pt-[50vh] flex font-[font2] items-start justify-start">
+    <div className="w-full ">
+      <div className="p-3 pt-[50vh] flex font-[font2] items-start justify-start">
         <h1 className="text-[12.7vw] uppercase  leading-[9vw]">Projets</h1>
         <h3 className="text-[2.7vw] leading-[1vw]">16</h3>
       </div>
-      <div className="imgContParent flex flex-col gap-2">
+      <div className="imgContParent flex flex-col gap-2 p-3">
         {imageArray.map((elem, idx) => {
           return (
             <div
@@ -76,6 +77,7 @@ const Projects = () => {
           );
         })}
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -42,17 +42,11 @@ const Section1 = () => {
       },
     });
 
-    ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.5, // higher = smoother
-      effects: true, // allows parallax effects
-    });
+    
   });
 
   return (
-    <div id="smooth-wrapper" className="relative">
-      <section id="smooth-content" className="section1 pt-[56vh] font-[font2] relative">
+      <section className="section1 pt-[56vh] font-[font2] relative">
         <div
           ref={imageContRef}
           className="image absolute top-[7.4%] left-[31%] w-[14.8vw] h-[20vw] rounded-2xl overflow-hidden "
@@ -107,7 +101,6 @@ const Section1 = () => {
           </p>
         </div>
       </section>
-    </div>
   );
 };
 
